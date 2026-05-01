@@ -4,7 +4,12 @@ import { resolve } from "path";
 
 config({ path: resolve(import.meta.dirname, "../.env") });
 import { parseArgs } from "util";
+import { nanoid } from "nanoid";
+import { eq } from "drizzle-orm";
 import type { ClinicalExtraction, ExtractionStrategy, FieldScores } from "@test-evals/shared";
+import { db } from "@test-evals/db";
+import { runs, caseResults } from "@test-evals/db";
+import { getPromptHash } from "@test-evals/llm";
 import { listTranscriptIds, loadTranscript, loadGold } from "./services/dataset.service.js";
 import { extract } from "./services/extract.service.js";
 import { evaluateCase, aggregateF1 } from "./services/evaluate.service.js";
@@ -73,6 +78,24 @@ async function main() {
   console.log("─".repeat(60));
 
   const transcriptIds = listTranscriptIds();
+
+  // Create a DB run record so the dashboard can track this CLI run.
+  const runId = nanoid();
+  const promptHash = getPromptHash(strategy);
+  let dbAvailable = true;
+  try {
+    await db.insert(runs).values({
+      id: runId,
+      strategy,
+      model,
+      promptHash,
+      status: "running",
+      totalCases: transcriptIds.length,
+    });
+  } catch {
+    dbAvailable = false;
+    console.warn("  [db] Could not reach database — run will not appear in dashboard.");
+  }
 
   // Pre-run cost estimate — abort before spending anything if projected total exceeds cap.
   const projectedCost = transcriptIds.reduce((sum, id) => sum + estimateCaseCost(loadTranscript(id)), 0);
@@ -147,6 +170,26 @@ async function main() {
             costUsd: cost,
           };
           reports.push(report);
+          if (dbAvailable) {
+            db.insert(caseResults).values({
+              id: nanoid(),
+              runId,
+              transcriptId: id,
+              strategy,
+              model,
+              status: "completed",
+              prediction: JSON.stringify(extraction),
+              scores: JSON.stringify(scores),
+              hallucinations: JSON.stringify(hallucinations),
+              attempts: JSON.stringify([]),
+              tokensInput: usage.input_tokens,
+              tokensOutput: usage.output_tokens,
+              tokensCacheRead: usage.cache_read_input_tokens,
+              tokensCacheWrite: usage.cache_write_input_tokens,
+              costUsd: String(cost),
+              wallTimeMs: 0,
+            }).catch(() => { /* best-effort */ });
+          }
           process.stdout.write(
             `  [${id}] F1=${agg.toFixed(3)} cache=${usage.cache_read_input_tokens}/${usage.cache_write_input_tokens} cost=$${cost.toFixed(5)} total=$${runningCostUsd.toFixed(5)}\n`,
           );
@@ -154,6 +197,17 @@ async function main() {
         } catch (err: unknown) {
           const msg = err instanceof Error ? err.message : String(err);
           console.error(`  [${id}] FAILED: ${msg}`);
+          if (dbAvailable) {
+            db.insert(caseResults).values({
+              id: nanoid(),
+              runId,
+              transcriptId: id,
+              strategy,
+              model,
+              status: "failed",
+              error: msg,
+            }).catch(() => { /* best-effort */ });
+          }
           reports.push({
             transcriptId: id,
             scores: { chief_complaint: 0, vitals: 0, medications: 0, diagnoses: 0, plan: 0, follow_up: 0 },
@@ -218,6 +272,28 @@ async function main() {
   console.log(`Hallucinations:    ${totalHallucinations}`);
   console.log(`Schema failures:   ${schemaFailureCount}`);
   console.log("─".repeat(60));
+
+  // Finalize DB run record
+  if (dbAvailable) {
+    try {
+      await db.update(runs).set({
+        status: failed.length === reports.length ? "failed" : "completed",
+        completedCases: completed.length,
+        failedCases: failed.length,
+        hallucinationCount: totalHallucinations,
+        schemaFailureCount,
+        totalTokensInput: totalTokensIn,
+        totalTokensOutput: totalTokensOut,
+        totalTokensCacheRead,
+        totalTokensCacheWrite,
+        totalCostUsd: String(totalCost),
+        aggregateF1: completed.length > 0 ? String(meanF1) : null,
+        updatedAt: new Date(),
+      }).where(eq(runs.id, runId));
+    } catch {
+      // best-effort
+    }
+  }
 
   // Write results file
   const timestamp = new Date().toISOString().replace(/[:.]/g, "-");
