@@ -1,0 +1,12 @@
+{
+  "name": "@test-evals/shared",
+  "type": "module",
+  "exports": {
+    ".": {
+      "default": "./src/index.ts"
+    }
+  },
+  "devDependencies": {
+    "typescript": "catalog:"
+  }
+}

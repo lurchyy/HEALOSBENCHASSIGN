@@ -1,0 +1,2996 @@
+{
+  "strategy": "few_shot",
+  "model": "claude-haiku-4-5-20251001",
+  "timestamp": "2026-05-01T09-25-55-607Z",
+  "summary": {
+    "completedCases": 50,
+    "failedCases": 0,
+    "aggregateF1": 0.754410111524469,
+    "fieldAverages": {
+      "chief_complaint": 0.5576731177319413,
+      "vitals": 1,
+      "medications": 0.8624761904761904,
+      "diagnoses": 0.7666666666666667,
+      "plan": 0.6302114878585467,
+      "follow_up": 0.7094332064134694
+    },
+    "totalTokensInput": 164536,
+    "totalTokensOutput": 21128,
+    "totalTokensCacheRead": 0,
+    "totalTokensCacheWrite": 0,
+    "totalCostUsd": 0.06754399999999999,
+    "hallucinationCount": 16,
+    "schemaFailureCount": 0
+  },
+  "cases": [
+    {
+      "transcriptId": "case_001",
+      "scores": {
+        "chief_complaint": 1,
+        "vitals": 1,
+        "medications": 1,
+        "diagnoses": 1,
+        "plan": 1,
+        "follow_up": 1
+      },
+      "prediction": {
+        "chief_complaint": "sore throat and nasal congestion for four days",
+        "vitals": {
+          "bp": "122/78",
+          "hr": 88,
+          "temp_f": 100.4,
+          "spo2": 98
+        },
+        "medications": [
+          {
+            "name": "ibuprofen",
+            "dose": "400 mg",
+            "frequency": "every 6 hours as needed",
+            "route": "PO"
+          }
+        ],
+        "diagnoses": [
+          {
+            "description": "viral upper respiratory infection",
+            "icd10": "J06.9"
+          }
+        ],
+        "plan": [
+          "supportive care with fluids and saline nasal spray",
+          "ibuprofen 400 mg every 6 hours as needed for throat pain and fever",
+          "call if not improving in 7 days or fever above 102"
+        ],
+        "follow_up": {
+          "interval_days": null,
+          "reason": "return only if symptoms worsen"
+        }
+      },
+      "aggregateF1": 1,
+      "hallucinations": [],
+      "isSchemaValid": true,
+      "tokensInput": 3317,
+      "tokensOutput": 346,
+      "tokensCacheRead": 0,
+      "tokensCacheWrite": 0,
+      "costUsd": 0.0012617499999999999
+    },
+    {
+      "transcriptId": "case_002",
+      "scores": {
+        "chief_complaint": 1,
+        "vitals": 1,
+        "medications": 1,
+        "diagnoses": 1,
+        "plan": 1,
+        "follow_up": 1
+      },
+      "prediction": {
+        "chief_complaint": "facial pressure and purulent nasal discharge for ten days",
+        "vitals": {
+          "bp": "118/76",
+          "hr": 82,
+          "temp_f": 101.2,
+          "spo2": 97
+        },
+        "medications": [
+          {
+            "name": "amoxicillin-clavulanate",
+            "dose": "875 mg",
+            "frequency": "twice daily",
+            "route": "PO"
+          },
+          {
+            "name": "pseudoephedrine",
+            "dose": "30 mg",
+            "frequency": "every 6 hours",
+            "route": "PO"
+          }
+        ],
+        "diagnoses": [
+          {
+            "description": "acute bacterial sinusitis",
+            "icd10": "J01.90"
+          }
+        ],
+        "plan": [
+          "start amoxicillin-clavulanate 875 mg twice daily for 7 days",
+          "saline nasal rinse twice a day",
+          "pseudoephedrine 30 mg every 6 hours as needed for congestion",
+          "call if not significantly better in 5 days"
+        ],
+        "follow_up": {
+          "interval_days": null,
+          "reason": "call if not improving in 5 days"
+        }
+      },
+      "aggregateF1": 1,
+      "hallucinations": [],
+      "isSchemaValid": true,
+      "tokensInput": 3306,
+      "tokensOutput": 420,
+      "tokensCacheRead": 0,
+      "tokensCacheWrite": 0,
+      "costUsd": 0.0013515
+    },
+    {
+      "transcriptId": "case_003",
+      "scores": {
+        "chief_complaint": 0.6666666666666666,
+        "vitals": 1,
+        "medications": 1,
+        "diagnoses": 1,
+        "plan": 0.5454545454545454,
+        "follow_up": 0.5
+      },
+      "prediction": {
+        "chief_complaint": "severe sore throat with difficulty swallowing, started yesterday afternoon",
+        "vitals": {
+          "bp": null,
+          "hr": null,
+          "temp_f": null,
+          "spo2": null
+        },
+        "medications": [
+          {
+            "name": "acetaminophen",
+            "dose": "500 mg",
+            "frequency": "every 6 hours as needed",
+            "route": "PO"
+          },
+          {
+            "name": "penicillin V",
+            "dose": "500 mg",
+            "frequency": "four times a day for 10 days",
+            "route": "PO"
+          }
+        ],
+        "diagnoses": [
+          {
+            "description": "strep throat",
+            "icd10": "J02.0"
+          }
+        ],
+        "plan": [
+          "stop by lab today for rapid strep test",
+          "acetaminophen 500 mg every 6 hours as needed",
+          "gargle with warm salt water",
+          "rest",
+          "penicillin V 500 mg four times a day for 10 days if rapid strep positive",
+          "message if not better in 3 days on antibiotics"
+        ],
+        "follow_up": {
+          "interval_days": null,
+          "reason": "message if not better in 3 days on antibiotics"
+        }
+      },
+      "aggregateF1": 0.7853535353535354,
+      "hallucinations": [
+        {
+          "field": "chief_complaint",
+          "value": "severe sore throat with difficulty swallowing, started yesterday afternoon"
+        }
+      ],
+      "isSchemaValid": true,
+      "tokensInput": 3267,
+      "tokensOutput": 430,
+      "tokensCacheRead": 0,
+      "tokensCacheWrite": 0,
+      "costUsd": 0.00135425
+    },
+    {
+      "transcriptId": "case_005",
+      "scores": {
+        "chief_complaint": 0.2727272727272727,
+        "vitals": 1,
+        "medications": 0.5,
+        "diagnoses": 0,
+        "plan": 0.6666666666666666,
+        "follow_up": 0.7857142857142857
+      },
+      "prediction": {
+        "chief_complaint": "right ear pulling and crying since yesterday",
+        "vitals": {
+          "bp": null,
+          "hr": 118,
+          "temp_f": 102.6,
+          "spo2": 99
+        },
+        "medications": [
+          {
+            "name": "amoxicillin",
+            "dose": "400 mg",
+            "frequency": "twice daily",
+            "route": "PO"
+          },
+          {
+            "name": "children's ibuprofen",
+            "dose": "5 mL",
+            "frequency": "every 6 hours as needed",
+            "route": "PO"
+          }
+        ],
+        "diagnoses": [
+          {
+            "description": "acute otitis media",
+            "icd10": "H66.0"
+          }
+        ],
+        "plan": [
+          "amoxicillin 400 mg by mouth twice a day for 10 days",
+          "children's ibuprofen 5 mL every 6 hours as needed for pain and fever",
+          "return if not better in 48 to 72 hours or if it gets worse"
+        ],
+        "follow_up": {
+          "interval_days": null,
+          "reason": "return if not better in 48 to 72 hours or if it gets worse"
+        }
+      },
+      "aggregateF1": 0.5375180375180375,
+      "hallucinations": [],
+      "isSchemaValid": true,
+      "tokensInput": 3281,
+      "tokensOutput": 413,
+      "tokensCacheRead": 0,
+      "tokensCacheWrite": 0,
+      "costUsd": 0.0013365
+    },
+    {
+      "transcriptId": "case_004",
+      "scores": {
+        "chief_complaint": 0.5,
+        "vitals": 1,
+        "medications": 0.5,
+        "diagnoses": 1,
+        "plan": 0.3333333333333333,
+        "follow_up": 0.875
+      },
+      "prediction": {
+        "chief_complaint": "cough for three weeks",
+        "vitals": {
+          "bp": "124/80",
+          "hr": 92,
+          "temp_f": 99.8,
+          "spo2": 95
+        },
+        "medications": [
+          {
+            "name": "albuterol inhaler",
+            "dose": "2 puffs",
+            "frequency": "every 4 to 6 hours as needed for wheeze and cough",
+            "route": "inhaled"
+          },
+          {
+            "name": "benzonatate",
+            "dose": "100 mg",
+            "frequency": "three times daily",
+            "route": "PO"
+          }
+        ],
+        "diagnoses": [
+          {
+            "description": "post-viral acute bronchitis with bronchospasm",
+            "icd10": "J20.9"
+          }
+        ],
+        "plan": [
+          "albuterol inhaler 2 puffs every 4 to 6 hours as needed for wheeze and cough",
+          "benzonatate 100 mg three times daily for cough suppression",
+          "return and get chest X-ray if cough lingers past four weeks total or if fevers develop"
+        ],
+        "follow_up": {
+          "interval_days": null,
+          "reason": "return if cough lingers past four weeks total or if fevers develop"
+        }
+      },
+      "aggregateF1": 0.701388888888889,
+      "hallucinations": [],
+      "isSchemaValid": true,
+      "tokensInput": 3301,
+      "tokensOutput": 437,
+      "tokensCacheRead": 0,
+      "tokensCacheWrite": 0,
+      "costUsd": 0.0013714999999999999
+    },
+    {
+      "transcriptId": "case_006",
+      "scores": {
+        "chief_complaint": 0.3333333333333333,
+        "vitals": 1,
+        "medications": 0.8571428571428571,
+        "diagnoses": 1,
+        "plan": 0.7272727272727272,
+        "follow_up": 0.6666666666666666
+      },
+      "prediction": {
+        "chief_complaint": "seasonal allergies with itching eyes, sneezing, and nasal congestion for two weeks",
+        "vitals": {
+          "bp": null,
+          "hr": null,
+          "temp_f": null,
+          "spo2": null
+        },
+        "medications": [
+          {
+            "name": "loratadine",
+            "dose": null,
+            "frequency": null,
+            "route": null
+          },
+          {
+            "name": "fluticasone nasal spray",
+            "dose": "two sprays in each nostril",
+            "frequency": "once daily",
+            "route": "intranasal"
+          },
+          {
+            "name": "cetirizine",
+            "dose": "10 mg",
+            "frequency": "at bedtime",
+            "route": "PO"
+          },
+          {
+            "name": "ketotifen ophthalmic drops",
+            "dose": "one drop in each eye",
+            "frequency": "twice daily as needed",
+            "route": "ophthalmic"
+          }
+        ],
+        "diagnoses": [
+          {
+            "description": "allergic rhinitis",
+            "icd10": "J30.9"
+          }
+        ],
+        "plan": [
+          "stop loratadine",
+          "start fluticasone nasal spray two sprays in each nostril once daily",
+          "add cetirizine 10 mg at bedtime",
+          "use ketotifen ophthalmic drops one drop in each eye twice daily as needed",
+          "give regimen two weeks of consistent use to assess full effect",
+          "message if still struggling in three weeks for consideration of allergy testing or referral"
+        ],
+        "follow_up": {
+          "interval_days": null,
+          "reason": "message if still struggling in three weeks for allergy testing or referral consideration"
+        }
+      },
+      "aggregateF1": 0.764069264069264,
+      "hallucinations": [],
+      "isSchemaValid": true,
+      "tokensInput": 3264,
+      "tokensOutput": 543,
+      "tokensCacheRead": 0,
+      "tokensCacheWrite": 0,
+      "costUsd": 0.00149475
+    },
+    {
+      "transcriptId": "case_008",
+      "scores": {
+        "chief_complaint": 0.3333333333333333,
+        "vitals": 1,
+        "medications": 1,
+        "diagnoses": 1,
+        "plan": 0.888888888888889,
+        "follow_up": 0.5
+      },
+      "prediction": {
+        "chief_complaint": "positive COVID test with runny nose, mild cough, and low fever for two days",
+        "vitals": {
+          "bp": null,
+          "hr": null,
+          "temp_f": 99.5,
+          "spo2": null
+        },
+        "medications": [
+          {
+            "name": "acetaminophen",
+            "dose": "500 mg",
+            "frequency": "every 6 hours as needed",
+            "route": "PO"
+          }
+        ],
+        "diagnoses": [
+          {
+            "description": "COVID-19",
+            "icd10": "U07.1"
+          }
+        ],
+        "plan": [
+          "supportive care with rest and fluids",
+          "acetaminophen 500 mg every 6 hours as needed for aches",
+          "isolate per CDC guidance",
+          "return to work when fever-free for 24 hours without medication and symptoms improving, generally around day 5 with mask through day 10",
+          "call if shortness of breath or worsening symptoms develop"
+        ],
+        "follow_up": {
+          "interval_days": null,
+          "reason": "call if shortness of breath or worsening symptoms develop"
+        }
+      },
+      "aggregateF1": 0.7870370370370371,
+      "hallucinations": [],
+      "isSchemaValid": true,
+      "tokensInput": 3264,
+      "tokensOutput": 388,
+      "tokensCacheRead": 0,
+      "tokensCacheWrite": 0,
+      "costUsd": 0.001301
+    },
+    {
+      "transcriptId": "case_007",
+      "scores": {
+        "chief_complaint": 0.8181818181818182,
+        "vitals": 1,
+        "medications": 1,
+        "diagnoses": 1,
+        "plan": 0.8000000000000002,
+        "follow_up": 0.6666666666666666
+      },
+      "prediction": {
+        "chief_complaint": "body aches, fever, headache, and dry cough for three days",
+        "vitals": {
+          "bp": "128/84",
+          "hr": 104,
+          "temp_f": 101.8,
+          "spo2": 94
+        },
+        "medications": [
+          {
+            "name": "oseltamivir",
+            "dose": "75 mg",
+            "frequency": "twice daily for 5 days",
+            "route": "PO"
+          },
+          {
+            "name": "acetaminophen",
+            "dose": "650 mg",
+            "frequency": "every 6 hours as needed",
+            "route": "PO"
+          }
+        ],
+        "diagnoses": [
+          {
+            "description": "influenza A",
+            "icd10": "J10.00"
+          }
+        ],
+        "plan": [
+          "start oseltamivir 75 mg twice daily for 5 days",
+          "acetaminophen 650 mg every 6 hours as needed for symptom relief",
+          "push fluids and rest",
+          "recheck SpO2 at home; go to ER if drops below 92 or breathing worsens",
+          "check in by message in 3 days"
+        ],
+        "follow_up": {
+          "interval_days": 3,
+          "reason": "symptom check-in"
+        }
+      },
+      "aggregateF1": 0.8808080808080808,
+      "hallucinations": [],
+      "isSchemaValid": true,
+      "tokensInput": 3285,
+      "tokensOutput": 437,
+      "tokensCacheRead": 0,
+      "tokensCacheWrite": 0,
+      "costUsd": 0.0013675
+    },
+    {
+      "transcriptId": "case_009",
+      "scores": {
+        "chief_complaint": 0.8571428571428571,
+        "vitals": 1,
+        "medications": 1,
+        "diagnoses": 0,
+        "plan": 0.6,
+        "follow_up": 0.5625
+      },
+      "prediction": {
+        "chief_complaint": "nausea, vomiting, and diarrhea since yesterday afternoon",
+        "vitals": {
+          "bp": "110/68",
+          "hr": 96,
+          "temp_f": 100.2,
+          "spo2": 99
+        },
+        "medications": [
+          {
+            "name": "ondansetron",
+            "dose": "4 mg",
+            "frequency": "every 8 hours as needed",
+            "route": "sublingual"
+          }
+        ],
+        "diagnoses": [
+          {
+            "description": "acute viral or food-borne gastroenteritis",
+            "icd10": "A09"
+          }
+        ],
+        "plan": [
+          "ondansetron 4 mg sublingual every 8 hours as needed for nausea",
+          "oral rehydration solution, sip slowly",
+          "BRAT diet as tolerated",
+          "avoid dairy for 48 hours",
+          "go to urgent care if unable to keep fluids down for more than 12 hours, develop bloody stools, or get severe abdominal pain"
+        ],
+        "follow_up": {
+          "interval_days": null,
+          "reason": "go to urgent care if unable to keep fluids down for more than 12 hours, develop bloody stools, or get severe abdominal pain"
+        }
+      },
+      "aggregateF1": 0.6699404761904763,
+      "hallucinations": [],
+      "isSchemaValid": true,
+      "tokensInput": 3320,
+      "tokensOutput": 418,
+      "tokensCacheRead": 0,
+      "tokensCacheWrite": 0,
+      "costUsd": 0.0013525
+    },
+    {
+      "transcriptId": "case_010",
+      "scores": {
+        "chief_complaint": 0.4,
+        "vitals": 1,
+        "medications": 1,
+        "diagnoses": 1,
+        "plan": 0.888888888888889,
+        "follow_up": 0.8333333333333333
+      },
+      "prediction": {
+        "chief_complaint": "reflux symptoms follow-up",
+        "vitals": {
+          "bp": "132/86",
+          "hr": 78,
+          "temp_f": null,
+          "spo2": null
+        },
+        "medications": [
+          {
+            "name": "omeprazole",
+            "dose": "20 mg",
+            "frequency": "once daily, 30 minutes before breakfast",
+            "route": "PO"
+          }
+        ],
+        "diagnoses": [
+          {
+            "description": "gastroesophageal reflux disease",
+            "icd10": "K21.9"
+          }
+        ],
+        "plan": [
+          "continue omeprazole 20 mg once daily, 30 minutes before breakfast",
+          "finish dinner at least three hours before bed",
+          "elevate head of bed",
+          "avoid late-night snacks",
+          "plan to taper off in 8 to 12 weeks if symptoms stay controlled"
+        ],
+        "follow_up": {
+          "interval_days": 90,
+          "reason": "reflux recheck and discuss tapering"
+        }
+      },
+      "aggregateF1": 0.8537037037037036,
+      "hallucinations": [],
+      "isSchemaValid": true,
+      "tokensInput": 3249,
+      "tokensOutput": 364,
+      "tokensCacheRead": 0,
+      "tokensCacheWrite": 0,
+      "costUsd": 0.00126725
+    },
+    {
+      "transcriptId": "case_011",
+      "scores": {
+        "chief_complaint": 0.8333333333333334,
+        "vitals": 1,
+        "medications": 1,
+        "diagnoses": 0,
+        "plan": 0.3636363636363636,
+        "follow_up": 1
+      },
+      "prediction": {
+        "chief_complaint": "constipation for a couple months",
+        "vitals": {
+          "bp": null,
+          "hr": null,
+          "temp_f": null,
+          "spo2": null
+        },
+        "medications": [
+          {
+            "name": "psyllium husk",
+            "dose": "1 tablespoon",
+            "frequency": "once a day to start, can increase to twice if needed",
+            "route": "PO"
+          },
+          {
+            "name": "polyethylene glycol",
+            "dose": "17 grams",
+            "frequency": "once daily in 8 ounces of water for two weeks, then wean",
+            "route": "PO"
+          }
+        ],
+        "diagnoses": [
+          {
+            "description": "constipation",
+            "icd10": "K59.1"
+          }
+        ],
+        "plan": [
+          "start psyllium husk 1 tablespoon once daily in water, can increase to twice daily if needed",
+          "start polyethylene glycol 17 grams in 8 ounces of water once daily for two weeks, then wean",
+          "drink at least 64 ounces of water daily",
+          "walk daily if able",
+          "return in 4 weeks for constipation recheck",
+          "return sooner if blood in stool, unintentional weight loss, or severe pain"
+        ],
+        "follow_up": {
+          "interval_days": 28,
+          "reason": "constipation recheck"
+        }
+      },
+      "aggregateF1": 0.6994949494949495,
+      "hallucinations": [
+        {
+          "field": "diagnoses.description",
+          "value": "constipation"
+        }
+      ],
+      "isSchemaValid": true,
+      "tokensInput": 3311,
+      "tokensOutput": 470,
+      "tokensCacheRead": 0,
+      "tokensCacheWrite": 0,
+      "costUsd": 0.0014152499999999998
+    },
+    {
+      "transcriptId": "case_012",
+      "scores": {
+        "chief_complaint": 0.5333333333333333,
+        "vitals": 1,
+        "medications": 1,
+        "diagnoses": 0,
+        "plan": 1,
+        "follow_up": 0.5769230769230769
+      },
+      "prediction": {
+        "chief_complaint": "IBS flare with bloating, alternating diarrhea and constipation, and crampy pain for three weeks",
+        "vitals": {
+          "bp": "116/72",
+          "hr": 80,
+          "temp_f": 98.4,
+          "spo2": null
+        },
+        "medications": [
+          {
+            "name": "dicyclomine",
+            "dose": "10 mg",
+            "frequency": "three times daily before meals",
+            "route": "PO"
+          },
+          {
+            "name": "simethicone",
+            "dose": "125 mg",
+            "frequency": "with meals as needed",
+            "route": "PO"
+          }
+        ],
+        "diagnoses": [
+          {
+            "description": "irritable bowel syndrome flare",
+            "icd10": "K58.9"
+          }
+        ],
+        "plan": [
+          "low-FODMAP diet trial for 4 to 6 weeks",
+          "dicyclomine 10 mg three times daily before meals for cramping",
+          "simethicone 125 mg with meals as needed for bloating",
+          "mindfulness or 20 minutes of walking daily for stress management"
+        ],
+        "follow_up": {
+          "interval_days": 42,
+          "reason": "reassess low-FODMAP diet trial and determine need for further workup"
+        }
+      },
+      "aggregateF1": 0.6850427350427349,
+      "hallucinations": [
+        {
+          "field": "diagnoses.description",
+          "value": "irritable bowel syndrome flare"
+        }
+      ],
+      "isSchemaValid": true,
+      "tokensInput": 3274,
+      "tokensOutput": 421,
+      "tokensCacheRead": 0,
+      "tokensCacheWrite": 0,
+      "costUsd": 0.00134475
+    },
+    {
+      "transcriptId": "case_013",
+      "scores": {
+        "chief_complaint": 0.5,
+        "vitals": 1,
+        "medications": 1,
+        "diagnoses": 1,
+        "plan": 0.6666666666666666,
+        "follow_up": 0.6538461538461539
+      },
+      "prediction": {
+        "chief_complaint": "upper right abdominal pain since last night after greasy meal",
+        "vitals": {
+          "bp": "138/88",
+          "hr": 102,
+          "temp_f": 100.6,
+          "spo2": 98
+        },
+        "medications": [
+          {
+            "name": "ibuprofen",
+            "dose": "600 mg",
+            "frequency": "every 6 hours as needed",
+            "route": "PO"
+          }
+        ],
+        "diagnoses": [
+          {
+            "description": "biliary colic versus early cholecystitis",
+            "icd10": "K81.9"
+          }
+        ],
+        "plan": [
+          "abdominal ultrasound today",
+          "CBC, comprehensive metabolic panel, and lipase",
+          "low-fat diet",
+          "ibuprofen 600 mg every 6 hours as needed for pain",
+          "go to ER if pain becomes constant, fever develops, or jaundice appears",
+          "call with ultrasound results and plan likely surgery referral if stones confirmed"
+        ],
+        "follow_up": {
+          "interval_days": null,
+          "reason": "call with imaging results and plan surgery referral if stones confirmed"
+        }
+      },
+      "aggregateF1": 0.8034188034188036,
+      "hallucinations": [],
+      "isSchemaValid": true,
+      "tokensInput": 3319,
+      "tokensOutput": 396,
+      "tokensCacheRead": 0,
+      "tokensCacheWrite": 0,
+      "costUsd": 0.00132475
+    },
+    {
+      "transcriptId": "case_015",
+      "scores": {
+        "chief_complaint": 0.7777777777777778,
+        "vitals": 1,
+        "medications": 1,
+        "diagnoses": 1,
+        "plan": 0.5333333333333333,
+        "follow_up": 1
+      },
+      "prediction": {
+        "chief_complaint": "type 2 diabetes follow-up with elevated A1c",
+        "vitals": {
+          "bp": "134/82",
+          "hr": 76,
+          "temp_f": 98.2,
+          "spo2": 99
+        },
+        "medications": [
+          {
+            "name": "metformin",
+            "dose": "1000 mg",
+            "frequency": "twice daily, increased to maximum effective dose",
+            "route": "PO"
+          },
+          {
+            "name": "empagliflozin",
+            "dose": "10 mg",
+            "frequency": "once daily",
+            "route": "PO"
+          },
+          {
+            "name": "atorvastatin",
+            "dose": "40 mg",
+            "frequency": "at bedtime",
+            "route": "PO"
+          },
+          {
+            "name": "lisinopril",
+            "dose": "10 mg",
+            "frequency": "once a day",
+            "route": "PO"
+          }
+        ],
+        "diagnoses": [
+          {
+            "description": "type 2 diabetes mellitus",
+            "icd10": "E11.9"
+          }
+        ],
+        "plan": [
+          "increase metformin to maximum effective dose",
+          "start empagliflozin 10 mg once daily",
+          "continue atorvastatin 40 mg at bedtime",
+          "continue lisinopril 10 mg once a day",
+          "watch for genital yeast infection on empagliflozin",
+          "maintain adequate fluid intake",
+          "obtain basic metabolic panel before follow-up visit",
+          "complete annual eye exam",
+          "recheck A1c in 3 months"
+        ],
+        "follow_up": {
+          "interval_days": 90,
+          "reason": "A1c recheck"
+        }
+      },
+      "aggregateF1": 0.8851851851851852,
+      "hallucinations": [
+        {
+          "field": "plan",
+          "value": "maintain adequate fluid intake"
+        }
+      ],
+      "isSchemaValid": true,
+      "tokensInput": 3309,
+      "tokensOutput": 558,
+      "tokensCacheRead": 0,
+      "tokensCacheWrite": 0,
+      "costUsd": 0.00152475
+    },
+    {
+      "transcriptId": "case_016",
+      "scores": {
+        "chief_complaint": 0.42857142857142855,
+        "vitals": 1,
+        "medications": 1,
+        "diagnoses": 1,
+        "plan": 0.39999999999999997,
+        "follow_up": 1
+      },
+      "prediction": {
+        "chief_complaint": "elevated blood pressure",
+        "vitals": {
+          "bp": "152/96",
+          "hr": 84,
+          "temp_f": null,
+          "spo2": null
+        },
+        "medications": [
+          {
+            "name": "amlodipine",
+            "dose": "5 mg",
+            "frequency": "once daily",
+            "route": "PO"
+          },
+          {
+            "name": "losartan",
+            "dose": "25 mg",
+            "frequency": "once daily",
+            "route": "PO"
+          },
+          {
+            "name": "acetaminophen",
+            "dose": "650 mg",
+            "frequency": "up to four times a day as needed",
+            "route": "PO"
+          }
+        ],
+        "diagnoses": [
+          {
+            "description": "elevated blood pressure",
+            "icd10": "I10"
+          }
+        ],
+        "plan": [
+          "start losartan 25 mg once daily",
+          "continue amlodipine 5 mg once daily",
+          "discontinue naproxen and use acetaminophen 650 mg up to four times a day as needed instead",
+          "cut back on salt to under 2 grams a day",
+          "aim for 30 minutes of walking five days a week",
+          "get a home BP cuff and log readings twice a day",
+          "basic metabolic panel before recheck visit to check kidney function"
+        ],
+        "follow_up": {
+          "interval_days": 28,
+          "reason": "blood pressure recheck"
+        }
+      },
+      "aggregateF1": 0.8047619047619049,
+      "hallucinations": [],
+      "isSchemaValid": true,
+      "tokensInput": 3303,
+      "tokensOutput": 487,
+      "tokensCacheRead": 0,
+      "tokensCacheWrite": 0,
+      "costUsd": 0.0014345
+    },
+    {
+      "transcriptId": "case_014",
+      "scores": {
+        "chief_complaint": 0.2857142857142857,
+        "vitals": 1,
+        "medications": 0.5,
+        "diagnoses": 0,
+        "plan": 0.8000000000000002,
+        "follow_up": 0.5
+      },
+      "prediction": {
+        "chief_complaint": "hemorrhoids with bright red blood on toilet paper for one week",
+        "vitals": {
+          "bp": null,
+          "hr": null,
+          "temp_f": null,
+          "spo2": null
+        },
+        "medications": [
+          {
+            "name": "hydrocortisone",
+            "dose": "1%",
+            "frequency": "twice daily for up to a week",
+            "route": "topical"
+          },
+          {
+            "name": "docusate",
+            "dose": "100 mg",
+            "frequency": "twice daily",
+            "route": "PO"
+          }
+        ],
+        "diagnoses": [
+          {
+            "description": "external hemorrhoids",
+            "icd10": "I84.2"
+          }
+        ],
+        "plan": [
+          "increase fluids and fiber",
+          "sitz bath twice daily for 10 to 15 minutes",
+          "hydrocortisone 1% cream applied twice daily for up to a week",
+          "start docusate 100 mg twice daily as stool softener",
+          "return for exam if bleeding doesn't resolve in 2 weeks, becomes heavier, or dark stools develop"
+        ],
+        "follow_up": {
+          "interval_days": null,
+          "reason": "return for exam if bleeding doesn't resolve in 2 weeks, becomes heavier, or dark stools develop"
+        }
+      },
+      "aggregateF1": 0.5142857142857143,
+      "hallucinations": [],
+      "isSchemaValid": true,
+      "tokensInput": 3261,
+      "tokensOutput": 435,
+      "tokensCacheRead": 0,
+      "tokensCacheWrite": 0,
+      "costUsd": 0.001359
+    },
+    {
+      "transcriptId": "case_017",
+      "scores": {
+        "chief_complaint": 0,
+        "vitals": 1,
+        "medications": 1,
+        "diagnoses": 0,
+        "plan": 0.888888888888889,
+        "follow_up": 0.6666666666666666
+      },
+      "prediction": {
+        "chief_complaint": "lipid follow-up",
+        "vitals": {
+          "bp": null,
+          "hr": null,
+          "temp_f": null,
+          "spo2": null
+        },
+        "medications": [
+          {
+            "name": "atorvastatin",
+            "dose": "20 mg",
+            "frequency": "once daily at bedtime",
+            "route": "PO"
+          }
+        ],
+        "diagnoses": [
+          {
+            "description": "elevated LDL cholesterol",
+            "icd10": "E78.2"
+          }
+        ],
+        "plan": [
+          "start atorvastatin 20 mg once daily at bedtime",
+          "continue Mediterranean-style diet with fewer refined carbs",
+          "150 minutes of moderate exercise weekly",
+          "recheck lipid panel and ALT in 3 months",
+          "stop medication and call if unexplained widespread muscle pain or dark urine"
+        ],
+        "follow_up": {
+          "interval_days": 90,
+          "reason": "lipid panel and ALT recheck; if LDL below 100 continue current regimen"
+        }
+      },
+      "aggregateF1": 0.5925925925925926,
+      "hallucinations": [],
+      "isSchemaValid": true,
+      "tokensInput": 3262,
+      "tokensOutput": 371,
+      "tokensCacheRead": 0,
+      "tokensCacheWrite": 0,
+      "costUsd": 0.00127925
+    },
+    {
+      "transcriptId": "case_019",
+      "scores": {
+        "chief_complaint": 1,
+        "vitals": 1,
+        "medications": 1,
+        "diagnoses": 1,
+        "plan": 0.8571428571428571,
+        "follow_up": 1
+      },
+      "prediction": {
+        "chief_complaint": "atrial fibrillation follow-up",
+        "vitals": {
+          "bp": null,
+          "hr": null,
+          "temp_f": null,
+          "spo2": null
+        },
+        "medications": [
+          {
+            "name": "apixaban",
+            "dose": "5 mg",
+            "frequency": "twice daily",
+            "route": "PO"
+          },
+          {
+            "name": "metoprolol succinate",
+            "dose": "50 mg",
+            "frequency": "once daily",
+            "route": "PO"
+          }
+        ],
+        "diagnoses": [
+          {
+            "description": "atrial fibrillation",
+            "icd10": "I48.91"
+          }
+        ],
+        "plan": [
+          "continue apixaban 5 mg twice daily",
+          "continue metoprolol succinate 50 mg once daily",
+          "basic metabolic panel and CBC in 2 months",
+          "follow up in 6 months for AFib management or sooner if anything changes"
+        ],
+        "follow_up": {
+          "interval_days": 180,
+          "reason": "AFib management"
+        }
+      },
+      "aggregateF1": 0.9761904761904762,
+      "hallucinations": [],
+      "isSchemaValid": true,
+      "tokensInput": 3211,
+      "tokensOutput": 386,
+      "tokensCacheRead": 0,
+      "tokensCacheWrite": 0,
+      "costUsd": 0.00128525
+    },
+    {
+      "transcriptId": "case_018",
+      "scores": {
+        "chief_complaint": 0.2222222222222222,
+        "vitals": 1,
+        "medications": 1,
+        "diagnoses": 1,
+        "plan": 0.6250000000000001,
+        "follow_up": 1
+      },
+      "prediction": {
+        "chief_complaint": "CHF check-in with weight gain",
+        "vitals": {
+          "bp": "118/74",
+          "hr": 72,
+          "temp_f": 98,
+          "spo2": 96
+        },
+        "medications": [
+          {
+            "name": "furosemide",
+            "dose": "40 mg",
+            "frequency": "once daily for one week, then back to 20 mg",
+            "route": "PO"
+          },
+          {
+            "name": "carvedilol",
+            "dose": "12.5 mg",
+            "frequency": "twice daily",
+            "route": "PO"
+          },
+          {
+            "name": "sacubitril-valsartan",
+            "dose": "49/51 mg",
+            "frequency": "twice daily",
+            "route": "PO"
+          },
+          {
+            "name": "spironolactone",
+            "dose": "25 mg",
+            "frequency": "once daily",
+            "route": "PO"
+          }
+        ],
+        "diagnoses": [
+          {
+            "description": "congestive heart failure",
+            "icd10": "I50.9"
+          }
+        ],
+        "plan": [
+          "increase furosemide to 40 mg once daily for one week, then return to 20 mg if weight comes off",
+          "continue carvedilol 12.5 mg twice daily",
+          "continue sacubitril-valsartan 49/51 mg twice daily",
+          "continue spironolactone 25 mg once daily",
+          "maintain sodium restriction to less than 2 grams daily",
+          "maintain fluid restriction to 2 liters daily",
+          "daily morning weights",
+          "call if gain more than 3 pounds in a day or 5 pounds in a week",
+          "basic metabolic panel in 2 weeks to check potassium and kidney function"
+        ],
+        "follow_up": {
+          "interval_days": 42,
+          "reason": "CHF follow-up"
+        }
+      },
+      "aggregateF1": 0.8078703703703703,
+      "hallucinations": [],
+      "isSchemaValid": true,
+      "tokensInput": 3317,
+      "tokensOutput": 605,
+      "tokensCacheRead": 0,
+      "tokensCacheWrite": 0,
+      "costUsd": 0.0015855
+    },
+    {
+      "transcriptId": "case_020",
+      "scores": {
+        "chief_complaint": 1,
+        "vitals": 1,
+        "medications": 1,
+        "diagnoses": 1,
+        "plan": 0.5,
+        "follow_up": 0.6111111111111112
+      },
+      "prediction": {
+        "chief_complaint": "metabolic syndrome counseling",
+        "vitals": {
+          "bp": "138/88",
+          "hr": 78,
+          "temp_f": 98.4,
+          "spo2": 98
+        },
+        "medications": [],
+        "diagnoses": [
+          {
+            "description": "metabolic syndrome",
+            "icd10": "E88.81"
+          }
+        ],
+        "plan": [
+          "structured lifestyle change for 6 months with goal of losing 7 to 10% of body weight",
+          "plate method: half vegetables, quarter lean protein, quarter complex carbs",
+          "cut sugary drinks",
+          "aim for 150 minutes of moderate cardio plus 2 days of strength training each week",
+          "referral to dietitian",
+          "repeat fasting glucose, lipid panel, and A1c in 3 months"
+        ],
+        "follow_up": {
+          "interval_days": 90,
+          "reason": "repeat labs and metabolic syndrome follow-up"
+        }
+      },
+      "aggregateF1": 0.8518518518518517,
+      "hallucinations": [
+        {
+          "field": "plan",
+          "value": "referral to dietitian"
+        }
+      ],
+      "isSchemaValid": true,
+      "tokensInput": 3278,
+      "tokensOutput": 340,
+      "tokensCacheRead": 0,
+      "tokensCacheWrite": 0,
+      "costUsd": 0.0012445
+    },
+    {
+      "transcriptId": "case_022",
+      "scores": {
+        "chief_complaint": 0.4,
+        "vitals": 1,
+        "medications": 0.5,
+        "diagnoses": 1,
+        "plan": 0.7692307692307692,
+        "follow_up": 0.625
+      },
+      "prediction": {
+        "chief_complaint": "right knee pain with stair climbing and morning stiffness for one year",
+        "vitals": {
+          "bp": null,
+          "hr": null,
+          "temp_f": null,
+          "spo2": null
+        },
+        "medications": [
+          {
+            "name": "acetaminophen",
+            "dose": "1000 mg",
+            "frequency": "three times daily as needed",
+            "route": "PO"
+          },
+          {
+            "name": "diclofenac",
+            "dose": "1%",
+            "frequency": "four times a day",
+            "route": "topical"
+          }
+        ],
+        "diagnoses": [
+          {
+            "description": "osteoarthritis of the right knee",
+            "icd10": "M17.11"
+          }
+        ],
+        "plan": [
+          "acetaminophen 1000 mg three times daily as needed",
+          "topical diclofenac 1% gel applied to knee four times a day",
+          "physical therapy referral for quadriceps strengthening",
+          "low-impact exercise such as swimming or stationary bike",
+          "weight loss if possible",
+          "consider intra-articular steroid injection if no relief in 6 weeks",
+          "follow up in 6 weeks"
+        ],
+        "follow_up": {
+          "interval_days": 42,
+          "reason": "osteoarthritis recheck"
+        }
+      },
+      "aggregateF1": 0.7157051282051281,
+      "hallucinations": [],
+      "isSchemaValid": true,
+      "tokensInput": 3288,
+      "tokensOutput": 444,
+      "tokensCacheRead": 0,
+      "tokensCacheWrite": 0,
+      "costUsd": 0.001377
+    },
+    {
+      "transcriptId": "case_021",
+      "scores": {
+        "chief_complaint": 1,
+        "vitals": 1,
+        "medications": 1,
+        "diagnoses": 1,
+        "plan": 0.4000000000000001,
+        "follow_up": 0.7105263157894737
+      },
+      "prediction": {
+        "chief_complaint": "acute low back pain after lifting",
+        "vitals": {
+          "bp": "124/78",
+          "hr": 72,
+          "temp_f": null,
+          "spo2": null
+        },
+        "medications": [
+          {
+            "name": "ibuprofen",
+            "dose": "600 mg",
+            "frequency": "three times daily with food for 7 to 10 days",
+            "route": "PO"
+          },
+          {
+            "name": "cyclobenzaprine",
+            "dose": "10 mg",
+            "frequency": "at bedtime as needed for muscle spasm if pain interferes with sleep",
+            "route": "PO"
+          }
+        ],
+        "diagnoses": [
+          {
+            "description": "acute mechanical low back strain",
+            "icd10": "M54.5"
+          }
+        ],
+        "plan": [
+          "ibuprofen 600 mg three times daily with food for 7 to 10 days",
+          "cyclobenzaprine 10 mg at bedtime as needed for muscle spasm",
+          "stay active and walk regularly, avoid bed rest",
+          "heat application",
+          "return if not significantly better in 4 weeks or if leg weakness, numbness, or bowel/bladder changes develop"
+        ],
+        "follow_up": {
+          "interval_days": null,
+          "reason": "return if not significantly better in 4 weeks or if leg weakness, numbness, or bowel/bladder changes develop"
+        }
+      },
+      "aggregateF1": 0.8517543859649123,
+      "hallucinations": [
+        {
+          "field": "plan",
+          "value": "heat application"
+        }
+      ],
+      "isSchemaValid": true,
+      "tokensInput": 3289,
+      "tokensOutput": 463,
+      "tokensCacheRead": 0,
+      "tokensCacheWrite": 0,
+      "costUsd": 0.001401
+    },
+    {
+      "transcriptId": "case_024",
+      "scores": {
+        "chief_complaint": 0.36363636363636365,
+        "vitals": 1,
+        "medications": 1,
+        "diagnoses": 1,
+        "plan": 0.6666666666666666,
+        "follow_up": 0.5
+      },
+      "prediction": {
+        "chief_complaint": "left ankle sprain from basketball injury yesterday",
+        "vitals": {
+          "bp": null,
+          "hr": null,
+          "temp_f": null,
+          "spo2": null
+        },
+        "medications": [
+          {
+            "name": "ibuprofen",
+            "dose": "400 mg",
+            "frequency": "every 6 hours as needed",
+            "route": "PO"
+          }
+        ],
+        "diagnoses": [
+          {
+            "description": "grade 2 lateral ankle sprain",
+            "icd10": "S93.41"
+          }
+        ],
+        "plan": [
+          "rest, ice 20 minutes every 2 to 3 hours for the first 48 hours",
+          "compression with ACE wrap",
+          "elevation",
+          "ibuprofen 400 mg every 6 hours as needed for pain and swelling",
+          "use crutches if needed but weight-bear as tolerated",
+          "start ankle range-of-motion exercises in a few days",
+          "return for imaging if pain or swelling not improving in 7 to 10 days"
+        ],
+        "follow_up": {
+          "interval_days": null,
+          "reason": "return for imaging if pain or swelling not improving in 7 to 10 days"
+        }
+      },
+      "aggregateF1": 0.7550505050505051,
+      "hallucinations": [],
+      "isSchemaValid": true,
+      "tokensInput": 3301,
+      "tokensOutput": 356,
+      "tokensCacheRead": 0,
+      "tokensCacheWrite": 0,
+      "costUsd": 0.00127025
+    },
+    {
+      "transcriptId": "case_025",
+      "scores": {
+        "chief_complaint": 0.6,
+        "vitals": 1,
+        "medications": 1,
+        "diagnoses": 1,
+        "plan": 0.8333333333333334,
+        "follow_up": 0.09375
+      },
+      "prediction": {
+        "chief_complaint": "right heel pain for six weeks",
+        "vitals": {
+          "bp": null,
+          "hr": null,
+          "temp_f": null,
+          "spo2": null
+        },
+        "medications": [
+          {
+            "name": "naproxen",
+            "dose": "220 mg",
+            "frequency": "twice a day",
+            "route": "PO"
+          }
+        ],
+        "diagnoses": [
+          {
+            "description": "plantar fasciitis",
+            "icd10": "M72.02"
+          }
+        ],
+        "plan": [
+          "calf and plantar fascia stretching exercises",
+          "wear supportive shoes, no walking barefoot at home",
+          "over-the-counter heel cushions",
+          "naproxen 220 mg twice a day with food for 10 days",
+          "consider night splint if morning pain continues",
+          "return in 8 weeks if not seeing progress for PT referral or steroid injection"
+        ],
+        "follow_up": {
+          "interval_days": 56,
+          "reason": "plantar fasciitis recheck; consider PT referral or steroid injection if no progress"
+        }
+      },
+      "aggregateF1": 0.7545138888888889,
+      "hallucinations": [],
+      "isSchemaValid": true,
+      "tokensInput": 3270,
+      "tokensOutput": 383,
+      "tokensCacheRead": 0,
+      "tokensCacheWrite": 0,
+      "costUsd": 0.00129625
+    },
+    {
+      "transcriptId": "case_027",
+      "scores": {
+        "chief_complaint": 0.5714285714285714,
+        "vitals": 1,
+        "medications": 1,
+        "diagnoses": 1,
+        "plan": 0.6666666666666665,
+        "follow_up": 0.6153846153846154
+      },
+      "prediction": {
+        "chief_complaint": "mental health follow-up on fluoxetine",
+        "vitals": {
+          "bp": "118/74",
+          "hr": 70,
+          "temp_f": null,
+          "spo2": null
+        },
+        "medications": [
+          {
+            "name": "fluoxetine",
+            "dose": "20 mg",
+            "frequency": "once daily",
+            "route": "PO"
+          }
+        ],
+        "diagnoses": [
+          {
+            "description": "depression",
+            "icd10": "F32.9"
+          }
+        ],
+        "plan": [
+          "continue fluoxetine 20 mg once daily",
+          "continue weekly therapy",
+          "consider 9 to 12 months of medication to prevent relapse once well",
+          "follow up in 8 weeks",
+          "call sooner if mood worsens or thoughts of self-harm"
+        ],
+        "follow_up": {
+          "interval_days": 56,
+          "reason": "depression follow-up; call sooner if mood worsens or thoughts of self-harm"
+        }
+      },
+      "aggregateF1": 0.8089133089133087,
+      "hallucinations": [],
+      "isSchemaValid": true,
+      "tokensInput": 3244,
+      "tokensOutput": 361,
+      "tokensCacheRead": 0,
+      "tokensCacheWrite": 0,
+      "costUsd": 0.00126225
+    },
+    {
+      "transcriptId": "case_023",
+      "scores": {
+        "chief_complaint": 0.35714285714285715,
+        "vitals": 1,
+        "medications": 1,
+        "diagnoses": 0.6666666666666666,
+        "plan": 1,
+        "follow_up": 0.625
+      },
+      "prediction": {
+        "chief_complaint": "right shoulder pain with overhead and behind-back movements for a couple weeks",
+        "vitals": {
+          "bp": "122/78",
+          "hr": 78,
+          "temp_f": null,
+          "spo2": null
+        },
+        "medications": [
+          {
+            "name": "naproxen",
+            "dose": "500 mg",
+            "frequency": "twice daily",
+            "route": "PO"
+          }
+        ],
+        "diagnoses": [
+          {
+            "description": "rotator cuff impingement",
+            "icd10": "M75.41"
+          },
+          {
+            "description": "supraspinatus tendinopathy",
+            "icd10": "M75.11"
+          }
+        ],
+        "plan": [
+          "naproxen 500 mg twice daily with food for two weeks",
+          "rest from overhead activity",
+          "refer to physical therapy for rotator cuff strengthening and posture work",
+          "ice 15 to 20 minutes a few times a day",
+          "if not improving in 6 weeks of PT, consider subacromial corticosteroid injection"
+        ],
+        "follow_up": {
+          "interval_days": 42,
+          "reason": "rotator cuff impingement recheck after physical therapy"
+        }
+      },
+      "aggregateF1": 0.7748015873015873,
+      "hallucinations": [],
+      "isSchemaValid": true,
+      "tokensInput": 3285,
+      "tokensOutput": 416,
+      "tokensCacheRead": 0,
+      "tokensCacheWrite": 0,
+      "costUsd": 0.00134125
+    },
+    {
+      "transcriptId": "case_028",
+      "scores": {
+        "chief_complaint": 1,
+        "vitals": 1,
+        "medications": 1,
+        "diagnoses": 1,
+        "plan": 0.5,
+        "follow_up": 0.5
+      },
+      "prediction": {
+        "chief_complaint": "insomnia for two months",
+        "vitals": {
+          "bp": null,
+          "hr": null,
+          "temp_f": null,
+          "spo2": null
+        },
+        "medications": [
+          {
+            "name": "melatonin",
+            "dose": "3 mg",
+            "frequency": "about 30 minutes before bedtime for two weeks",
+            "route": "PO"
+          }
+        ],
+        "diagnoses": [
+          {
+            "description": "insomnia",
+            "icd10": "G47.00"
+          }
+        ],
+        "plan": [
+          "no caffeine after noon",
+          "no phones in bed — wind-down routine starting an hour before bed",
+          "consistent wake time, even on weekends",
+          "melatonin 3 mg about 30 minutes before bedtime for two weeks",
+          "use CBT-I app for long-term treatment",
+          "message in 4 weeks"
+        ],
+        "follow_up": {
+          "interval_days": 28,
+          "reason": "reassess sleep improvement and consider trazodone if needed"
+        }
+      },
+      "aggregateF1": 0.8333333333333334,
+      "hallucinations": [],
+      "isSchemaValid": true,
+      "tokensInput": 3273,
+      "tokensOutput": 372,
+      "tokensCacheRead": 0,
+      "tokensCacheWrite": 0,
+      "costUsd": 0.00128325
+    },
+    {
+      "transcriptId": "case_029",
+      "scores": {
+        "chief_complaint": 0.3333333333333333,
+        "vitals": 1,
+        "medications": 1,
+        "diagnoses": 1,
+        "plan": 0.8000000000000002,
+        "follow_up": 0.9
+      },
+      "prediction": {
+        "chief_complaint": "ADHD follow-up; methylphenidate adjustment",
+        "vitals": {
+          "bp": "124/80",
+          "hr": 84,
+          "temp_f": null,
+          "spo2": null
+        },
+        "medications": [
+          {
+            "name": "methylphenidate ER",
+            "dose": "20 mg",
+            "frequency": "once daily in the morning",
+            "route": "PO"
+          },
+          {
+            "name": "methylphenidate immediate-release",
+            "dose": "10 mg",
+            "frequency": "once daily around 1 pm, not later than 2 pm",
+            "route": "PO"
+          }
+        ],
+        "diagnoses": [
+          {
+            "description": "ADHD",
+            "icd10": "F90.9"
+          }
+        ],
+        "plan": [
+          "continue methylphenidate ER 20 mg in the morning",
+          "add immediate-release methylphenidate 10 mg around 1 pm, not later than 2 pm",
+          "continue monitoring blood pressure and heart rate",
+          "continue therapy and workplace strategies",
+          "call if any chest pain or palpitations"
+        ],
+        "follow_up": {
+          "interval_days": 56,
+          "reason": "ADHD medication adjustment follow-up"
+        }
+      },
+      "aggregateF1": 0.8388888888888889,
+      "hallucinations": [],
+      "isSchemaValid": true,
+      "tokensInput": 3255,
+      "tokensOutput": 428,
+      "tokensCacheRead": 0,
+      "tokensCacheWrite": 0,
+      "costUsd": 0.00134875
+    },
+    {
+      "transcriptId": "case_030",
+      "scores": {
+        "chief_complaint": 1,
+        "vitals": 1,
+        "medications": 1,
+        "diagnoses": 0,
+        "plan": 0.3076923076923077,
+        "follow_up": 0.9285714285714286
+      },
+      "prediction": {
+        "chief_complaint": "4-year-old well-child visit",
+        "vitals": {
+          "bp": null,
+          "hr": 96,
+          "temp_f": 98.6,
+          "spo2": null
+        },
+        "medications": [
+          {
+            "name": "Tylenol",
+            "dose": "160 mg",
+            "frequency": "as needed for fever or soreness",
+            "route": "PO"
+          }
+        ],
+        "diagnoses": [],
+        "plan": [
+          "DTaP, IPV, MMR, and varicella booster vaccines today",
+          "annual flu shot today",
+          "Tylenol 160 mg by mouth as needed for fever or soreness after vaccines",
+          "limit screens to under one hour a day",
+          "family meals when possible",
+          "outdoor play encouraged",
+          "brush teeth twice daily",
+          "dental visit every 6 months"
+        ],
+        "follow_up": {
+          "interval_days": 365,
+          "reason": "next well-child visit at age 5"
+        }
+      },
+      "aggregateF1": 0.7060439560439561,
+      "hallucinations": [],
+      "isSchemaValid": true,
+      "tokensInput": 3302,
+      "tokensOutput": 353,
+      "tokensCacheRead": 0,
+      "tokensCacheWrite": 0,
+      "costUsd": 0.00126675
+    },
+    {
+      "transcriptId": "case_031",
+      "scores": {
+        "chief_complaint": 0.1111111111111111,
+        "vitals": 1,
+        "medications": 1,
+        "diagnoses": 1,
+        "plan": 0.5,
+        "follow_up": 0.5
+      },
+      "prediction": {
+        "chief_complaint": "fever starting last night, fussy",
+        "vitals": {
+          "bp": null,
+          "hr": 132,
+          "temp_f": 103.4,
+          "spo2": 98
+        },
+        "medications": [
+          {
+            "name": "children's ibuprofen",
+            "dose": "5 mL",
+            "frequency": "every 6 hours",
+            "route": "PO"
+          },
+          {
+            "name": "children's acetaminophen",
+            "dose": "5 mL",
+            "frequency": "every 4 to 6 hours",
+            "route": "PO"
+          }
+        ],
+        "diagnoses": [
+          {
+            "description": "viral syndrome with fever",
+            "icd10": "R50.9"
+          }
+        ],
+        "plan": [
+          "alternate ibuprofen and acetaminophen if uncomfortable",
+          "children's ibuprofen 5 mL every 6 hours",
+          "children's acetaminophen 5 mL every 4 to 6 hours, not at the same time",
+          "push fluids including popsicles, diluted juice, electrolyte drinks",
+          "go to ER if lethargic, won't drink, stiff neck, persistent vomiting, non-blanching rash, or fever lasting more than 5 days"
+        ],
+        "follow_up": {
+          "interval_days": null,
+          "reason": "call if concerns"
+        }
+      },
+      "aggregateF1": 0.6851851851851851,
+      "hallucinations": [],
+      "isSchemaValid": true,
+      "tokensInput": 3341,
+      "tokensOutput": 464,
+      "tokensCacheRead": 0,
+      "tokensCacheWrite": 0,
+      "costUsd": 0.0014152499999999998
+    },
+    {
+      "transcriptId": "case_026",
+      "scores": {
+        "chief_complaint": 0.18181818181818182,
+        "vitals": 1,
+        "medications": 0,
+        "diagnoses": 0.6666666666666666,
+        "plan": 0.4444444444444445,
+        "follow_up": 0.6666666666666666
+      },
+      "prediction": {
+        "chief_complaint": "anxiety with chest tightness and insomnia for months",
+        "vitals": {
+          "bp": null,
+          "hr": null,
+          "temp_f": null,
+          "spo2": null
+        },
+        "medications": [
+          {
+            "name": "sertraline",
+            "dose": "25 mg",
+            "frequency": "once daily for 1 week, then increase to 50 mg once daily",
+            "route": "PO"
+          }
+        ],
+        "diagnoses": [
+          {
+            "description": "generalized anxiety disorder, severe",
+            "icd10": "F41.1"
+          }
+        ],
+        "plan": [
+          "start sertraline 25 mg once daily for 1 week, then increase to 50 mg once daily",
+          "referral for cognitive behavioral therapy",
+          "maintain regular sleep schedule and avoid screens 1 hour before bed",
+          "check in at 4 weeks to assess medication tolerance",
+          "call sooner if any worsening mood or thoughts of self-harm"
+        ],
+        "follow_up": {
+          "interval_days": 28,
+          "reason": "assess medication tolerance and treatment response"
+        }
+      },
+      "aggregateF1": 0.4932659932659933,
+      "hallucinations": [
+        {
+          "field": "chief_complaint",
+          "value": "anxiety with chest tightness and insomnia for months"
+        },
+        {
+          "field": "plan",
+          "value": "start sertraline 25 mg once daily for 1 week, then increase to 50 mg once daily"
+        },
+        {
+          "field": "plan",
+          "value": "maintain regular sleep schedule and avoid screens 1 hour before bed"
+        },
+        {
+          "field": "follow_up.reason",
+          "value": "assess medication tolerance and treatment response"
+        }
+      ],
+      "isSchemaValid": true,
+      "tokensInput": 3284,
+      "tokensOutput": 383,
+      "tokensCacheRead": 0,
+      "tokensCacheWrite": 0,
+      "costUsd": 0.0012997500000000001
+    },
+    {
+      "transcriptId": "case_034",
+      "scores": {
+        "chief_complaint": 0.25,
+        "vitals": 1,
+        "medications": 0,
+        "diagnoses": 1,
+        "plan": 0.6,
+        "follow_up": 0.55
+      },
+      "prediction": {
+        "chief_complaint": "acne for a couple years, mostly forehead and jawline",
+        "vitals": {
+          "bp": null,
+          "hr": null,
+          "temp_f": null,
+          "spo2": null
+        },
+        "medications": [
+          {
+            "name": "benzoyl peroxide",
+            "dose": "5%",
+            "frequency": "once daily in the shower",
+            "route": "topical"
+          },
+          {
+            "name": "adapalene",
+            "dose": "0.1%",
+            "frequency": "pea-sized amount once nightly",
+            "route": "topical"
+          },
+          {
+            "name": "doxycycline",
+            "dose": "100 mg",
+            "frequency": "once daily for 12 weeks",
+            "route": "PO"
+          }
+        ],
+        "diagnoses": [
+          {
+            "description": "moderate inflammatory acne",
+            "icd10": "L70.0"
+          }
+        ],
+        "plan": [
+          "continue benzoyl peroxide 5% wash in the shower",
+          "start adapalene 0.1% gel, pea-sized amount applied to entire face once nightly",
+          "start doxycycline 100 mg once daily for 12 weeks",
+          "use sunscreen daily due to doxycycline photosensitivity",
+          "take doxycycline with full glass of water and don't lie down for 30 minutes after"
+        ],
+        "follow_up": {
+          "interval_days": 84,
+          "reason": "assess response to doxycycline and consider tapering"
+        }
+      },
+      "aggregateF1": 0.5666666666666668,
+      "hallucinations": [
+        {
+          "field": "follow_up.reason",
+          "value": "assess response to doxycycline and consider tapering"
+        }
+      ],
+      "isSchemaValid": true,
+      "tokensInput": 3302,
+      "tokensOutput": 490,
+      "tokensCacheRead": 0,
+      "tokensCacheWrite": 0,
+      "costUsd": 0.001438
+    },
+    {
+      "transcriptId": "case_032",
+      "scores": {
+        "chief_complaint": 0,
+        "vitals": 1,
+        "medications": 0.6,
+        "diagnoses": 1,
+        "plan": 0.6666666666666666,
+        "follow_up": 0.5
+      },
+      "prediction": {
+        "chief_complaint": "wheezing and cough for one day",
+        "vitals": {
+          "bp": null,
+          "hr": 124,
+          "temp_f": 99,
+          "spo2": 92
+        },
+        "medications": [
+          {
+            "name": "albuterol",
+            "dose": "2.5 mg",
+            "frequency": "nebulized once now in clinic",
+            "route": "inhaled"
+          },
+          {
+            "name": "ipratropium",
+            "dose": "0.5 mg",
+            "frequency": "once now in clinic with albuterol",
+            "route": "inhaled"
+          },
+          {
+            "name": "prednisolone",
+            "dose": "20 mg",
+            "frequency": "once daily for 5 days",
+            "route": "PO"
+          },
+          {
+            "name": "albuterol HFA",
+            "dose": "2 puffs",
+            "frequency": "every 4 hours through tomorrow, then taper as she improves",
+            "route": "inhaled"
+          },
+          {
+            "name": "fluticasone",
+            "dose": "88 mcg",
+            "frequency": "two puffs twice daily",
+            "route": "inhaled"
+          }
+        ],
+        "diagnoses": [
+          {
+            "description": "moderate asthma exacerbation",
+            "icd10": "J45.901"
+          }
+        ],
+        "plan": [
+          "nebulized albuterol 2.5 mg with ipratropium 0.5 mg in clinic now, then reassess",
+          "start prednisolone 20 mg by mouth once daily for 5 days",
+          "albuterol HFA 2 puffs every 4 hours through tomorrow, then taper as she improves",
+          "continue fluticasone 88 mcg two puffs twice daily",
+          "set phone alarm to help maintain fluticasone dosing routine",
+          "ER if retractions worsen, can't speak in full sentences, or SpO2 drops below 90",
+          "return in 2 to 3 days for recheck"
+        ],
+        "follow_up": {
+          "interval_days": 2,
+          "reason": "asthma exacerbation recheck"
+        }
+      },
+      "aggregateF1": 0.6277777777777778,
+      "hallucinations": [
+        {
+          "field": "chief_complaint",
+          "value": "wheezing and cough for one day"
+        }
+      ],
+      "isSchemaValid": true,
+      "tokensInput": 3342,
+      "tokensOutput": 680,
+      "tokensCacheRead": 0,
+      "tokensCacheWrite": 0,
+      "costUsd": 0.0016855
+    },
+    {
+      "transcriptId": "case_036",
+      "scores": {
+        "chief_complaint": 1,
+        "vitals": 1,
+        "medications": 1,
+        "diagnoses": 1,
+        "plan": 1,
+        "follow_up": 0.5
+      },
+      "prediction": {
+        "chief_complaint": "dysuria, urinary frequency, and urgency for two days",
+        "vitals": {
+          "bp": "110/70",
+          "hr": 88,
+          "temp_f": 99.4,
+          "spo2": null
+        },
+        "medications": [
+          {
+            "name": "nitrofurantoin",
+            "dose": "100 mg",
+            "frequency": "twice daily",
+            "route": "PO"
+          },
+          {
+            "name": "phenazopyridine",
+            "dose": "200 mg",
+            "frequency": "three times a day with meals for up to 2 days",
+            "route": "PO"
+          }
+        ],
+        "diagnoses": [
+          {
+            "description": "uncomplicated urinary tract infection",
+            "icd10": "N39.0"
+          }
+        ],
+        "plan": [
+          "start nitrofurantoin 100 mg twice daily for 5 days",
+          "phenazopyridine 200 mg three times a day with meals for up to 2 days for dysuria",
+          "drink plenty of water",
+          "send urine culture",
+          "call if develop flank pain, fever above 101, or not better in 48 hours"
+        ],
+        "follow_up": {
+          "interval_days": null,
+          "reason": "call if develop flank pain, fever above 101, or not better in 48 hours"
+        }
+      },
+      "aggregateF1": 0.9166666666666666,
+      "hallucinations": [],
+      "isSchemaValid": true,
+      "tokensInput": 3283,
+      "tokensOutput": 449,
+      "tokensCacheRead": 0,
+      "tokensCacheWrite": 0,
+      "costUsd": 0.001382
+    },
+    {
+      "transcriptId": "case_035",
+      "scores": {
+        "chief_complaint": 0.8,
+        "vitals": 1,
+        "medications": 1,
+        "diagnoses": 0,
+        "plan": 0.5454545454545454,
+        "follow_up": 1
+      },
+      "prediction": {
+        "chief_complaint": "right calf erythema, warmth, and swelling for two days",
+        "vitals": {
+          "bp": "130/82",
+          "hr": 96,
+          "temp_f": 100.8,
+          "spo2": 98
+        },
+        "medications": [
+          {
+            "name": "cephalexin",
+            "dose": "500 mg",
+            "frequency": "four times a day",
+            "route": "PO"
+          },
+          {
+            "name": "acetaminophen",
+            "dose": "650 mg",
+            "frequency": "every 6 hours as needed",
+            "route": "PO"
+          }
+        ],
+        "diagnoses": [
+          {
+            "description": "cellulitis",
+            "icd10": "L03.90"
+          }
+        ],
+        "plan": [
+          "start cephalexin 500 mg four times a day for 7 days",
+          "elevate the leg when possible",
+          "mark borders of erythema with pen and monitor for expansion",
+          "acetaminophen 650 mg every 6 hours as needed for pain and fever",
+          "go to ER if redness expands beyond marked borders, fever worsens, vomiting, or streaking develops",
+          "return in 3 days for recheck"
+        ],
+        "follow_up": {
+          "interval_days": 3,
+          "reason": "cellulitis recheck"
+        }
+      },
+      "aggregateF1": 0.7242424242424242,
+      "hallucinations": [],
+      "isSchemaValid": true,
+      "tokensInput": 3311,
+      "tokensOutput": 383,
+      "tokensCacheRead": 0,
+      "tokensCacheWrite": 0,
+      "costUsd": 0.0013065
+    },
+    {
+      "transcriptId": "case_038",
+      "scores": {
+        "chief_complaint": 0.3333333333333333,
+        "vitals": 1,
+        "medications": 1,
+        "diagnoses": 0,
+        "plan": 0.5,
+        "follow_up": 0.7
+      },
+      "prediction": {
+        "chief_complaint": "contraception counseling for hormonal IUD placement",
+        "vitals": {
+          "bp": "116/72",
+          "hr": 68,
+          "temp_f": null,
+          "spo2": null
+        },
+        "medications": [
+          {
+            "name": "ibuprofen",
+            "dose": "600 mg",
+            "frequency": "one hour before appointment",
+            "route": "PO"
+          }
+        ],
+        "diagnoses": [],
+        "plan": [
+          "hormonal IUD placement scheduled in 2 weeks",
+          "continue current pill until insertion",
+          "negative pregnancy test required day of insertion",
+          "take ibuprofen 600 mg one hour before appointment for cramping"
+        ],
+        "follow_up": {
+          "interval_days": 14,
+          "reason": "hormonal IUD placement"
+        }
+      },
+      "aggregateF1": 0.5888888888888889,
+      "hallucinations": [],
+      "isSchemaValid": true,
+      "tokensInput": 3282,
+      "tokensOutput": 303,
+      "tokensCacheRead": 0,
+      "tokensCacheWrite": 0,
+      "costUsd": 0.00119925
+    },
+    {
+      "transcriptId": "case_039",
+      "scores": {
+        "chief_complaint": 0.29411764705882354,
+        "vitals": 1,
+        "medications": 1,
+        "diagnoses": 1,
+        "plan": 0.5714285714285715,
+        "follow_up": 0.875
+      },
+      "prediction": {
+        "chief_complaint": "migraines twice a month with throbbing, photophobia, and nausea lasting 6 to 8 hours",
+        "vitals": {
+          "bp": "124/78",
+          "hr": 76,
+          "temp_f": null,
+          "spo2": null
+        },
+        "medications": [
+          {
+            "name": "sumatriptan",
+            "dose": "50 mg",
+            "frequency": "at first sign of migraine, may repeat in 2 hours if needed, max 100 mg in 24 hours",
+            "route": "PO"
+          }
+        ],
+        "diagnoses": [
+          {
+            "description": "migraine with aura",
+            "icd10": "G43.11"
+          }
+        ],
+        "plan": [
+          "start sumatriptan 50 mg PO at first sign of migraine, may repeat in 2 hours if needed, max 100 mg in 24 hours",
+          "avoid sumatriptan if chest pain or new neurological symptoms develop with headache",
+          "track migraine triggers: sleep, food, stress, dehydration",
+          "if migraines increase to more than 4 per month, start daily preventive therapy"
+        ],
+        "follow_up": {
+          "interval_days": 56,
+          "reason": "migraine management follow-up"
+        }
+      },
+      "aggregateF1": 0.7900910364145659,
+      "hallucinations": [],
+      "isSchemaValid": true,
+      "tokensInput": 3277,
+      "tokensOutput": 427,
+      "tokensCacheRead": 0,
+      "tokensCacheWrite": 0,
+      "costUsd": 0.001353
+    },
+    {
+      "transcriptId": "case_040",
+      "scores": {
+        "chief_complaint": 0.2857142857142857,
+        "vitals": 1,
+        "medications": 1,
+        "diagnoses": 1,
+        "plan": 1,
+        "follow_up": 0
+      },
+      "prediction": {
+        "chief_complaint": "dizziness for three days with room spinning when rolling over or looking up",
+        "vitals": {
+          "bp": "134/84",
+          "hr": 78,
+          "temp_f": null,
+          "spo2": null
+        },
+        "medications": [
+          {
+            "name": "meclizine",
+            "dose": "25 mg",
+            "frequency": "every 6 hours as needed",
+            "route": "PO"
+          }
+        ],
+        "diagnoses": [
+          {
+            "description": "benign paroxysmal positional vertigo, right ear",
+            "icd10": "H81.11"
+          }
+        ],
+        "plan": [
+          "Epley maneuver performed in office",
+          "sleep with head slightly elevated for 48 hours",
+          "avoid sleeping on right side",
+          "meclizine 25 mg every 6 hours as needed for nausea",
+          "return if not better in 2 weeks or if new symptoms develop"
+        ],
+        "follow_up": {
+          "interval_days": 14,
+          "reason": "benign paroxysmal positional vertigo recheck"
+        }
+      },
+      "aggregateF1": 0.7142857142857143,
+      "hallucinations": [],
+      "isSchemaValid": true,
+      "tokensInput": 3338,
+      "tokensOutput": 381,
+      "tokensCacheRead": 0,
+      "tokensCacheWrite": 0,
+      "costUsd": 0.00131075
+    },
+    {
+      "transcriptId": "case_041",
+      "scores": {
+        "chief_complaint": 0.4444444444444444,
+        "vitals": 1,
+        "medications": 1,
+        "diagnoses": 1,
+        "plan": 0.23529411764705882,
+        "follow_up": 0.6428571428571428
+      },
+      "prediction": {
+        "chief_complaint": "band-like headaches across forehead, almost daily",
+        "vitals": {
+          "bp": null,
+          "hr": null,
+          "temp_f": null,
+          "spo2": null
+        },
+        "medications": [
+          {
+            "name": "naproxen",
+            "dose": "440 mg",
+            "frequency": "as needed up to twice a day, max 10 days a month",
+            "route": "PO"
+          }
+        ],
+        "diagnoses": [
+          {
+            "description": "chronic tension-type headache",
+            "icd10": "G44.2"
+          }
+        ],
+        "plan": [
+          "naproxen 440 mg as needed up to twice a day, maximum 10 days per month",
+          "stress reduction",
+          "optimize posture and ergonomics",
+          "regular exercise",
+          "increase hydration",
+          "improve sleep",
+          "soft diet for a few days for jaw tension",
+          "warm compresses for jaw",
+          "consider night guard for teeth grinding",
+          "consider preventive medication like amitriptyline if headaches remain daily despite changes"
+        ],
+        "follow_up": {
+          "interval_days": 28,
+          "reason": "tension headache and jaw clenching update"
+        }
+      },
+      "aggregateF1": 0.7204326174914412,
+      "hallucinations": [
+        {
+          "field": "plan",
+          "value": "increase hydration"
+        },
+        {
+          "field": "plan",
+          "value": "improve sleep"
+        }
+      ],
+      "isSchemaValid": true,
+      "tokensInput": 3290,
+      "tokensOutput": 345,
+      "tokensCacheRead": 0,
+      "tokensCacheWrite": 0,
+      "costUsd": 0.00125375
+    },
+    {
+      "transcriptId": "case_033",
+      "scores": {
+        "chief_complaint": 1,
+        "vitals": 1,
+        "medications": 0.5,
+        "diagnoses": 1,
+        "plan": 1,
+        "follow_up": 0.5
+      },
+      "prediction": {
+        "chief_complaint": "itchy red rash on forearms and back of knees for two weeks",
+        "vitals": {
+          "bp": null,
+          "hr": null,
+          "temp_f": null,
+          "spo2": null
+        },
+        "medications": [
+          {
+            "name": "triamcinolone",
+            "dose": "0.1%",
+            "frequency": "twice daily for up to 2 weeks",
+            "route": "topical"
+          },
+          {
+            "name": "cetirizine",
+            "dose": "10 mg",
+            "frequency": "once daily",
+            "route": "PO"
+          }
+        ],
+        "diagnoses": [
+          {
+            "description": "atopic dermatitis",
+            "icd10": "L20.9"
+          }
+        ],
+        "plan": [
+          "switch back to gentle, fragrance-free body wash",
+          "use thick fragrance-free moisturizer twice a day, especially within 3 minutes after showers",
+          "apply triamcinolone 0.1% ointment to affected areas twice daily for up to 2 weeks",
+          "take cetirizine 10 mg once daily for itch",
+          "return if not improving in 2 weeks or signs of skin infection develop (pus, increased redness, warmth)"
+        ],
+        "follow_up": {
+          "interval_days": null,
+          "reason": "return if not improving in 2 weeks or signs of skin infection develop"
+        }
+      },
+      "aggregateF1": 0.8333333333333334,
+      "hallucinations": [],
+      "isSchemaValid": true,
+      "tokensInput": 3295,
+      "tokensOutput": 462,
+      "tokensCacheRead": 0,
+      "tokensCacheWrite": 0,
+      "costUsd": 0.00140125
+    },
+    {
+      "transcriptId": "case_043",
+      "scores": {
+        "chief_complaint": 1,
+        "vitals": 1,
+        "medications": 1,
+        "diagnoses": 1,
+        "plan": 0.3636363636363636,
+        "follow_up": 1
+      },
+      "prediction": {
+        "chief_complaint": "smoking cessation counseling",
+        "vitals": {
+          "bp": "130/82",
+          "hr": 80,
+          "temp_f": null,
+          "spo2": null
+        },
+        "medications": [
+          {
+            "name": "varenicline",
+            "dose": "0.5 mg",
+            "frequency": "once daily days 1-3, twice daily days 4-7, then 1 mg twice daily from day 8 onward for 12 weeks total",
+            "route": "PO"
+          }
+        ],
+        "diagnoses": [
+          {
+            "description": "tobacco use disorder",
+            "icd10": "F17.200"
+          }
+        ],
+        "plan": [
+          "start varenicline 1 week before quit date: 0.5 mg once daily days 1-3, 0.5 mg twice daily days 4-7, 1 mg twice daily from day 8 onward for 12 weeks total",
+          "take varenicline with food and full glass of water",
+          "enroll in quit-line counseling",
+          "set quit date within 2 weeks",
+          "avoid usual smoking triggers and plan substitutes such as gum, walking, or deep breaths",
+          "watch for unusual mood changes"
+        ],
+        "follow_up": {
+          "interval_days": 28,
+          "reason": "smoking cessation follow-up"
+        }
+      },
+      "aggregateF1": 0.8939393939393939,
+      "hallucinations": [],
+      "isSchemaValid": true,
+      "tokensInput": 3314,
+      "tokensOutput": 442,
+      "tokensCacheRead": 0,
+      "tokensCacheWrite": 0,
+      "costUsd": 0.0013809999999999998
+    },
+    {
+      "transcriptId": "case_042",
+      "scores": {
+        "chief_complaint": 0.6666666666666666,
+        "vitals": 1,
+        "medications": 1,
+        "diagnoses": 0,
+        "plan": 0.28571428571428575,
+        "follow_up": 0.8333333333333333
+      },
+      "prediction": {
+        "chief_complaint": "annual physical examination",
+        "vitals": {
+          "bp": "122/78",
+          "hr": 70,
+          "temp_f": 98.4,
+          "spo2": 99
+        },
+        "medications": [],
+        "diagnoses": [],
+        "plan": [
+          "lipid panel",
+          "fasting glucose",
+          "A1c",
+          "comprehensive metabolic panel",
+          "CBC",
+          "TSH",
+          "schedule screening mammogram",
+          "schedule first colonoscopy",
+          "Pap smear",
+          "tetanus booster today",
+          "continue regular exercise",
+          "maintain stable weight",
+          "continue no smoking",
+          "limit alcohol to under one drink per day",
+          "call with lab results"
+        ],
+        "follow_up": {
+          "interval_days": 365,
+          "reason": "annual physical"
+        }
+      },
+      "aggregateF1": 0.6309523809523809,
+      "hallucinations": [],
+      "isSchemaValid": true,
+      "tokensInput": 3277,
+      "tokensOutput": 309,
+      "tokensCacheRead": 0,
+      "tokensCacheWrite": 0,
+      "costUsd": 0.0012055
+    },
+    {
+      "transcriptId": "case_044",
+      "scores": {
+        "chief_complaint": 0.18181818181818182,
+        "vitals": 1,
+        "medications": 1,
+        "diagnoses": 1,
+        "plan": 0.6666666666666666,
+        "follow_up": 0.8571428571428572
+      },
+      "prediction": {
+        "chief_complaint": "weight management; gained 10 pounds in last 18 months",
+        "vitals": {
+          "bp": "132/84",
+          "hr": 78,
+          "temp_f": 98.4,
+          "spo2": 98
+        },
+        "medications": [
+          {
+            "name": "semaglutide",
+            "dose": "0.25 mg",
+            "frequency": "once a week for 4 weeks, then titrate up",
+            "route": "subcutaneously"
+          }
+        ],
+        "diagnoses": [
+          {
+            "description": "prediabetes",
+            "icd10": "R73.03"
+          },
+          {
+            "description": "overweight",
+            "icd10": "E66.9"
+          }
+        ],
+        "plan": [
+          "start semaglutide 0.25 mg subcutaneously once weekly for 4 weeks, then titrate up",
+          "calorie-reduced, high-protein eating pattern",
+          "150 minutes of moderate exercise weekly",
+          "food and activity logs",
+          "dietitian referral",
+          "stop semaglutide and call if severe abdominal pain",
+          "recheck in 4 weeks for tolerability and dose increase",
+          "repeat A1c and metabolic panel in 3 months"
+        ],
+        "follow_up": {
+          "interval_days": 28,
+          "reason": "tolerability and dose increase of semaglutide"
+        }
+      },
+      "aggregateF1": 0.7842712842712842,
+      "hallucinations": [],
+      "isSchemaValid": true,
+      "tokensInput": 3335,
+      "tokensOutput": 461,
+      "tokensCacheRead": 0,
+      "tokensCacheWrite": 0,
+      "costUsd": 0.00141
+    },
+    {
+      "transcriptId": "case_045",
+      "scores": {
+        "chief_complaint": 1,
+        "vitals": 1,
+        "medications": 1,
+        "diagnoses": 1,
+        "plan": 0.5,
+        "follow_up": 1
+      },
+      "prediction": {
+        "chief_complaint": "hypothyroid follow-up with elevated TSH",
+        "vitals": {
+          "bp": "118/74",
+          "hr": 64,
+          "temp_f": null,
+          "spo2": null
+        },
+        "medications": [
+          {
+            "name": "levothyroxine",
+            "dose": "88 mcg",
+            "frequency": "once daily on an empty stomach, with water only, at least 30 to 60 minutes before food, coffee, or other meds",
+            "route": "PO"
+          }
+        ],
+        "diagnoses": [
+          {
+            "description": "hypothyroidism",
+            "icd10": "E03.9"
+          }
+        ],
+        "plan": [
+          "increase levothyroxine to 88 mcg once daily on an empty stomach",
+          "take levothyroxine with water only, at least 30 to 60 minutes before food, coffee, or other meds",
+          "recheck TSH in 6 to 8 weeks",
+          "call if develop palpitations, jitteriness, or trouble sleeping"
+        ],
+        "follow_up": {
+          "interval_days": 56,
+          "reason": "TSH recheck"
+        }
+      },
+      "aggregateF1": 0.9166666666666666,
+      "hallucinations": [],
+      "isSchemaValid": true,
+      "tokensInput": 3279,
+      "tokensOutput": 397,
+      "tokensCacheRead": 0,
+      "tokensCacheWrite": 0,
+      "costUsd": 0.001316
+    },
+    {
+      "transcriptId": "case_046",
+      "scores": {
+        "chief_complaint": 1,
+        "vitals": 1,
+        "medications": 0.6666666666666666,
+        "diagnoses": 1,
+        "plan": 0.4,
+        "follow_up": 1
+      },
+      "prediction": {
+        "chief_complaint": "vitamin D deficiency",
+        "vitals": {
+          "bp": null,
+          "hr": null,
+          "temp_f": null,
+          "spo2": null
+        },
+        "medications": [
+          {
+            "name": "vitamin D3",
+            "dose": "50,000 IU",
+            "frequency": "once a week for 8 weeks, then 2000 IU daily",
+            "route": "PO"
+          }
+        ],
+        "diagnoses": [
+          {
+            "description": "vitamin D deficiency",
+            "icd10": "E55.9"
+          }
+        ],
+        "plan": [
+          "vitamin D3 50,000 IU once a week for 8 weeks, then maintenance dose of 2000 IU daily with a meal containing fat",
+          "get 15 to 20 minutes of midday sunlight a few times a week",
+          "consider fortified foods",
+          "recheck vitamin D level in 3 months"
+        ],
+        "follow_up": {
+          "interval_days": 90,
+          "reason": "vitamin D level recheck"
+        }
+      },
+      "aggregateF1": 0.8444444444444444,
+      "hallucinations": [],
+      "isSchemaValid": true,
+      "tokensInput": 3225,
+      "tokensOutput": 369,
+      "tokensCacheRead": 0,
+      "tokensCacheWrite": 0,
+      "costUsd": 0.0012675
+    },
+    {
+      "transcriptId": "case_037",
+      "scores": {
+        "chief_complaint": 0.21428571428571427,
+        "vitals": 1,
+        "medications": 1,
+        "diagnoses": 1,
+        "plan": 0.6666666666666665,
+        "follow_up": 0.15
+      },
+      "prediction": {
+        "chief_complaint": "severe menstrual cramps for two days every cycle since high school",
+        "vitals": {
+          "bp": null,
+          "hr": null,
+          "temp_f": null,
+          "spo2": null
+        },
+        "medications": [
+          {
+            "name": "ibuprofen",
+            "dose": "600 mg",
+            "frequency": "every 6 hours with food, starting a day before period and continuing for first 2 to 3 days",
+            "route": "PO"
+          }
+        ],
+        "diagnoses": [
+          {
+            "description": "primary dysmenorrhea",
+            "icd10": "N94.6"
+          }
+        ],
+        "plan": [
+          "start ibuprofen 600 mg every 6 hours with food, beginning a day before period starts and continuing for first 2 to 3 days",
+          "use heat pad",
+          "regular exercise",
+          "message after two cycles to report response"
+        ],
+        "follow_up": {
+          "interval_days": 60,
+          "reason": "dysmenorrhea follow-up after two cycles of ibuprofen trial"
+        }
+      },
+      "aggregateF1": 0.6718253968253968,
+      "hallucinations": [],
+      "isSchemaValid": true,
+      "tokensInput": 3251,
+      "tokensOutput": 376,
+      "tokensCacheRead": 0,
+      "tokensCacheWrite": 0,
+      "costUsd": 0.00128275
+    },
+    {
+      "transcriptId": "case_049",
+      "scores": {
+        "chief_complaint": 0.7142857142857143,
+        "vitals": 1,
+        "medications": 1,
+        "diagnoses": 1,
+        "plan": 0.37499999999999994,
+        "follow_up": 1
+      },
+      "prediction": {
+        "chief_complaint": "boiling water burn to forearm since yesterday",
+        "vitals": {
+          "bp": null,
+          "hr": null,
+          "temp_f": null,
+          "spo2": null
+        },
+        "medications": [
+          {
+            "name": "silver sulfadiazine 1% cream",
+            "dose": "1%",
+            "frequency": "twice daily",
+            "route": "topical"
+          },
+          {
+            "name": "ibuprofen",
+            "dose": "600 mg",
+            "frequency": "every 6 hours with food",
+            "route": "PO"
+          },
+          {
+            "name": "acetaminophen",
+            "dose": "500 mg",
+            "frequency": "every 6 hours, alternating as needed",
+            "route": "PO"
+          }
+        ],
+        "diagnoses": [
+          {
+            "description": "partial-thickness second-degree burn",
+            "icd10": "T23.21"
+          }
+        ],
+        "plan": [
+          "clean wound with mild soap and water",
+          "leave intact blisters intact",
+          "debride loose skin from unroofed blister",
+          "cover with non-adherent dressing",
+          "apply silver sulfadiazine 1% cream twice daily",
+          "ibuprofen 600 mg every 6 hours with food",
+          "acetaminophen 500 mg every 6 hours, alternating as needed",
+          "change dressing daily",
+          "call if signs of infection develop: increased pain, redness spreading, drainage, or fever",
+          "wound check in 3 days"
+        ],
+        "follow_up": {
+          "interval_days": 3,
+          "reason": "wound check"
+        }
+      },
+      "aggregateF1": 0.8482142857142857,
+      "hallucinations": [],
+      "isSchemaValid": true,
+      "tokensInput": 3319,
+      "tokensOutput": 437,
+      "tokensCacheRead": 0,
+      "tokensCacheWrite": 0,
+      "costUsd": 0.001376
+    },
+    {
+      "transcriptId": "case_050",
+      "scores": {
+        "chief_complaint": 0.2727272727272727,
+        "vitals": 1,
+        "medications": 0.5,
+        "diagnoses": 1,
+        "plan": 0.6153846153846153,
+        "follow_up": 0.5
+      },
+      "prediction": {
+        "chief_complaint": "bike scrape with road rash on left knee",
+        "vitals": {
+          "bp": null,
+          "hr": null,
+          "temp_f": null,
+          "spo2": null
+        },
+        "medications": [
+          {
+            "name": "acetaminophen",
+            "dose": "500 mg",
+            "frequency": "every 6 hours as needed",
+            "route": "PO"
+          },
+          {
+            "name": "petrolatum ointment",
+            "dose": null,
+            "frequency": "reapply once a day with fresh non-stick dressing",
+            "route": "topical"
+          }
+        ],
+        "diagnoses": [
+          {
+            "description": "abrasion of left knee",
+            "icd10": "S80.011A"
+          }
+        ],
+        "plan": [
+          "saline irrigation and gentle scrubbing to remove debris",
+          "apply petrolatum ointment and non-stick dressing",
+          "wash gently with soap and water once a day at home",
+          "reapply petrolatum ointment and fresh non-stick dressing daily",
+          "keep covered for the first week",
+          "acetaminophen 500 mg every 6 hours as needed for pain",
+          "call if increasing redness, warmth, pus, or fever"
+        ],
+        "follow_up": {
+          "interval_days": null,
+          "reason": "call if signs of infection (increasing redness, warmth, pus, fever)"
+        }
+      },
+      "aggregateF1": 0.648018648018648,
+      "hallucinations": [
+        {
+          "field": "plan",
+          "value": "saline irrigation and gentle scrubbing to remove debris"
+        }
+      ],
+      "isSchemaValid": true,
+      "tokensInput": 3319,
+      "tokensOutput": 466,
+      "tokensCacheRead": 0,
+      "tokensCacheWrite": 0,
+      "costUsd": 0.0014122499999999999
+    },
+    {
+      "transcriptId": "case_048",
+      "scores": {
+        "chief_complaint": 0.5454545454545454,
+        "vitals": 1,
+        "medications": 0,
+        "diagnoses": 1,
+        "plan": 0,
+        "follow_up": 1
+      },
+      "prediction": {
+        "chief_complaint": "3 cm laceration on left index finger from knife slip",
+        "vitals": {
+          "bp": "124/78",
+          "hr": 86,
+          "temp_f": 98.6,
+          "spo2": 99
+        },
+        "medications": [
+          {
+            "name": "bacitracin ointment",
+            "dose": null,
+            "frequency": "twice daily",
+            "route": "topical"
+          }
+        ],
+        "diagnoses": [
+          {
+            "description": "laceration of left index finger",
+            "icd10": "S61.219A"
+          }
+        ],
+        "plan": [
+          "irrigation and cleaning of laceration",
+          "closure with 4-0 nylon simple interrupted sutures",
+          "keep clean and dry for 24 hours",
+          "apply bacitracin ointment twice daily and re-cover after 24 hours",
+          "no soaking, dishes, baths, or swimming until sutures removed",
+          "return in 10 days for suture removal",
+          "call immediately if redness, warmth, pus, streaking, or fever develop"
+        ],
+        "follow_up": {
+          "interval_days": 10,
+          "reason": "suture removal"
+        }
+      },
+      "aggregateF1": 0.5909090909090909,
+      "hallucinations": [
+        {
+          "field": "plan",
+          "value": "irrigation and cleaning of laceration"
+        }
+      ],
+      "isSchemaValid": true,
+      "tokensInput": 3315,
+      "tokensOutput": 403,
+      "tokensCacheRead": 0,
+      "tokensCacheWrite": 0,
+      "costUsd": 0.0013325
+    },
+    {
+      "transcriptId": "case_047",
+      "scores": {
+        "chief_complaint": 0.2,
+        "vitals": 1,
+        "medications": 1,
+        "diagnoses": 0,
+        "plan": 0.5454545454545454,
+        "follow_up": 0.8
+      },
+      "prediction": {
+        "chief_complaint": "left foot pain (first metatarsophalangeal joint) for acute onset",
+        "vitals": {
+          "bp": "142/88",
+          "hr": 92,
+          "temp_f": 99.6,
+          "spo2": null
+        },
+        "medications": [
+          {
+            "name": "indomethacin",
+            "dose": "50 mg",
+            "frequency": "three times a day with food until the flare resolves",
+            "route": "PO"
+          },
+          {
+            "name": "allopurinol",
+            "dose": "100 mg",
+            "frequency": "once a day, titrate up after flare settles",
+            "route": "PO"
+          }
+        ],
+        "diagnoses": [
+          {
+            "description": "gout flare",
+            "icd10": "M10.9"
+          }
+        ],
+        "plan": [
+          "indomethacin 50 mg three times a day with food until flare resolves (usually 5 to 7 days)",
+          "avoid aspirin",
+          "ice joint, elevate, rest",
+          "limit red meat, shellfish, beer",
+          "hydrate",
+          "start allopurinol 100 mg once daily after flare settles, titrate up with goal uric acid under 6"
+        ],
+        "follow_up": {
+          "interval_days": 28,
+          "reason": "gout flare follow-up"
+        }
+      },
+      "aggregateF1": 0.5909090909090909,
+      "hallucinations": [],
+      "isSchemaValid": true,
+      "tokensInput": 3351,
+      "tokensOutput": 460,
+      "tokensCacheRead": 0,
+      "tokensCacheWrite": 0,
+      "costUsd": 0.00141275
+    }
+  ]
+}

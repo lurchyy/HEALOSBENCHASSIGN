@@ -17,8 +17,8 @@ export function createAuth() {
     emailAndPassword: {
       enabled: true,
     },
-    secret: env.BETTER_AUTH_SECRET,
-    baseURL: env.BETTER_AUTH_URL,
+    secret: env.BETTER_AUTH_SECRET ?? "auth-disabled-for-healosbench-evals",
+    baseURL: env.BETTER_AUTH_URL ?? env.CORS_ORIGIN,
     advanced: {
       defaultCookieAttributes: {
         sameSite: "none",

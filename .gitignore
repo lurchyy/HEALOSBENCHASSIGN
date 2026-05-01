@@ -49,3 +49,6 @@ coverage
 .cache
 tmp
 temp
+
+# Claude Code session files
+.claude/
