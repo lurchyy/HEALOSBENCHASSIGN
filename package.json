@@ -33,7 +33,7 @@
     "db:studio": "turbo -F @test-evals/db db:studio",
     "db:generate": "turbo -F @test-evals/db db:generate",
     "db:migrate": "turbo -F @test-evals/db db:migrate",
-    "eval": "bun run apps/server/src/eval.ts"
+    "eval": "bun run --env-file apps/server/.env apps/server/src/eval.ts"
   },
   "dependencies": {
     "@test-evals/env": "workspace:*",

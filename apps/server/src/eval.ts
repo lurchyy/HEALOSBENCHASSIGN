@@ -1,8 +1,5 @@
-import { config } from "dotenv";
 import { writeFileSync, mkdirSync } from "fs";
 import { resolve } from "path";
-
-config({ path: resolve(import.meta.dirname, "../.env") });
 import { parseArgs } from "util";
 import { nanoid } from "nanoid";
 import { eq } from "drizzle-orm";
